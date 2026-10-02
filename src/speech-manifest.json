@@ -1,0 +1,122 @@
+{
+  "provider": "OpenAI",
+  "model": "gpt-4o-mini-tts",
+  "voice": "coral",
+  "speed": 1.2,
+  "response_format": "mp3",
+  "instructions": "Speak in natural, clear conversational English with short pauses. Sound engaged and curious. Avoid drawn-out or theatrical delivery. Read only the supplied text.",
+  "clips": {
+    "scene": {
+      "file": "scene.mp3",
+      "text": "In a campus car park, a student notices that his shadow looks unusually dense against a white wall. His body seems unchanged.",
+      "signature": "25da912e2d6ed84655d9f042c58cbf03f01dc216eeceea3af17d2bcc75b81ba8",
+      "bytes": 124416,
+      "sha256": "f501b0e2919b9d446f686511669c2919e032acc2d9352af97e53e8a4528a6a87",
+      "generatedAt": "2026-10-02T06:08:58.912Z"
+    },
+    "plot": {
+      "file": "plot.mp3",
+      "text": "The shadow becomes the first clue to a transformation caused by an experiment. The student starts to investigate what is happening to him.",
+      "signature": "ef61196778f583f9ce718d05354e46cb2e8bc9b5f13a1a9217c971544500e466",
+      "bytes": 132864,
+      "sha256": "c9514871c13c9b22d845e254e9e539a8d7f8fe6029f29b8fddb77c86ac7d8904",
+      "generatedAt": "2026-10-02T06:09:01.499Z"
+    },
+    "characters": {
+      "file": "characters.mp3",
+      "text": "The protagonist: A student discovering changes after an experiment. A fellow student: A witness who may become a confidant",
+      "signature": "df05a3c1e8cc8963fcb9d28e33a71abbe521cc63159bf436ccf1ee28d0063f4c",
+      "bytes": 121728,
+      "sha256": "2383c3eba8070c0c4129340d84707af55266981db2fb10c10ecdad7c184fa49b",
+      "generatedAt": "2026-10-02T06:09:03.720Z"
+    },
+    "question": {
+      "file": "question.mp3",
+      "text": "Does this first sign of change spark fear or curiosity in him?",
+      "signature": "1758af149f17dfa476880b317325226922d78ca0100968dfa717da11a0b290f2",
+      "bytes": 69120,
+      "sha256": "5a9fdeb27e613b7193c5d932f3e912d0e8117b5335e559af9d97a88e1c66ca3d",
+      "generatedAt": "2026-10-02T06:09:05.219Z"
+    },
+    "answer": {
+      "file": "answer.mp3",
+      "text": "Curiosity leads him to inspect the shadow, while fear makes him keep the discovery to himself.",
+      "signature": "3c15fc971625b14e27d92fbd82787172747e8c456ce661c0631df332f95952d3",
+      "bytes": 103680,
+      "sha256": "fb84481d5bcbe94d26cf2684a8c61cf6e485f11858f211bc11340ff747c6740f",
+      "generatedAt": "2026-10-02T06:09:07.988Z"
+    },
+    "updated-scene": {
+      "file": "updated-scene.mp3",
+      "text": "The student steps closer to the car park wall, comparing his ordinary-looking body with its unnaturally dense shadow.",
+      "signature": "a4b36b1041d00617e59a8030fef038c7b14a566aa1e865b6f1b5019849a260ac",
+      "bytes": 108288,
+      "sha256": "30f5bfd9edce46b03ceff9f36487c5a9fc6c62d529b109e2a3f3503021377372",
+      "generatedAt": "2026-10-02T06:09:09.903Z"
+    },
+    "updated-plot": {
+      "file": "updated-plot.mp3",
+      "text": "He decides to investigate the experiment before telling anyone about the changes.",
+      "signature": "35f1380dc1db637b306ba44ab5082819f4dcd3d939b984d102664266ea96aa1a",
+      "bytes": 70272,
+      "sha256": "98d5d2cd9c3108e3fe9554e3c3deccdac8424064ecf460eb6e15ffedba3810fe",
+      "generatedAt": "2026-10-02T06:09:11.639Z"
+    },
+    "updated-question": {
+      "file": "updated-question.mp3",
+      "text": "What might make him trust someone enough to reveal what he has noticed?",
+      "signature": "cacfdb19f18114b826f3e53ac7a1f157021236da52421611d8d0ab88ad0ccb11",
+      "bytes": 72960,
+      "sha256": "3a6a286520734ce6466e53992654cb6d29c53ba4a03138309b5b778de476ccb2",
+      "generatedAt": "2026-10-02T06:09:13.404Z"
+    },
+    "role-opening": {
+      "file": "role-opening.mp3",
+      "text": "I saw you staring at the wall. Was that really your shadow?",
+      "signature": "7bde7bd74b165f1c249c6db3ca720a8e294338f4a60f37e5b9db336fbae084db",
+      "bytes": 69120,
+      "sha256": "c49bcf19926e0dcfc4232f986c1606541a1294dc724e4506518dc1c7132b4302",
+      "generatedAt": "2026-10-02T06:09:16.279Z"
+    },
+    "role-reply-0": {
+      "file": "role-reply-0.mp3",
+      "text": "I won’t. But you have been different since that experiment. Let me help you find out why.",
+      "signature": "b92ecfce04f145de9d2d5cf8706340e50a13d3d06792f684fbde7ee59d08723c",
+      "bytes": 82944,
+      "sha256": "9eb6d8ad5c77e6a10009fe2fddf7e81d85912620ada36c0b114e84d97a98fe78",
+      "generatedAt": "2026-10-02T06:09:18.421Z"
+    },
+    "role-reply-1": {
+      "file": "role-reply-1.mp3",
+      "text": "Then I want to hear your story before I believe theirs. What happened in that lab?",
+      "signature": "38f3b9cbe2a23d9866e2c85ecc407168c356af43655841da4e887a73329e1a6e",
+      "bytes": 88320,
+      "sha256": "51b97d59af00a49bcaaf19abc9211360a05675337e6f01f8e3867ab055896886",
+      "generatedAt": "2026-10-02T06:09:20.518Z"
+    },
+    "moments-scene": {
+      "file": "moments-scene.mp3",
+      "text": "Moments. In the car park, an unusually dense shadow reveals the first sign of a student’s transformation.",
+      "signature": "1df9f86ed738514f23aff52b220343c41d79f63c3e57a118f040f0d6353f5969",
+      "bytes": 112128,
+      "sha256": "8e03149fa4c76967c85792e86a63b5a416e406df665816d39b195734a7d6622b",
+      "generatedAt": "2026-10-02T06:09:22.167Z"
+    },
+    "moments-answer": {
+      "file": "moments-answer.mp3",
+      "text": "He chooses to investigate quietly before sharing his discovery.",
+      "signature": "b2090e9168349da8dab47bc1be2aa8b28e85dd73e5f06ead111419216c56f7b6",
+      "bytes": 72192,
+      "sha256": "96b664f1bccc996b5a4767103d76fb137d7e97d638ddcb989c1434c186deb1b9",
+      "generatedAt": "2026-10-02T06:09:24.219Z"
+    },
+    "moments-role": {
+      "file": "moments-role.mp3",
+      "text": "A conversation with a fellow student explores whether he can trust someone with his secret.",
+      "signature": "4d3a99f60546e401bd597e3612b00663a3c9b4ded67e7dda07e8c43e50f53e6b",
+      "bytes": 87552,
+      "sha256": "53b84a03663d9427a27bb7ed921c8540c5b71ed990f94f55303ea1281ccd4bb3",
+      "generatedAt": "2026-10-02T06:09:27.237Z"
+    }
+  }
+}
