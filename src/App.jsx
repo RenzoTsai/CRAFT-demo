@@ -47,7 +47,7 @@ function ExperienceJourney({ activeStep = null, compact = false }) {
             <h2 className="section-heading">The CRAFT experience</h2>
             <ol aria-label="From everyday inspiration to fiction writing">
               {[
-                { title: 'Find inspiration', detail: 'AI suggests connections between your surroundings and your story.' },
+                { title: 'Find inspiration', detail: 'AI proactively suggests connections between your surroundings and your story.' },
                 { title: 'Capture a moment', detail: 'Take a photo and voice your idea, right where it happens.' },
                 { title: 'Turn reality into fiction', detail: 'Shape everyday details into scenes, characters, and plots.' },
                 { title: 'Step into a character', detail: 'Explore dialogue through role-play with an AI character.' },
