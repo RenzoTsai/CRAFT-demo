@@ -1,3 +1,19 @@
+import { useId, useState } from 'react';
+import { ChevronDown } from 'lucide-react';
+
+function ResearchContext({ title, label, children }) {
+  const [expanded, setExpanded] = useState(false);
+  const contentId = useId();
+  return <aside className="similarity-context" aria-label={label}>
+    <h3>{title}</h3>
+    <button className="context-toggle" aria-expanded={expanded} aria-controls={contentId}
+      onClick={() => setExpanded(value => !value)}>
+      <span>{title}</span><ChevronDown size={16} aria-hidden="true" />
+    </button>
+    <div id={contentId} className={`context-content${expanded ? ' is-open' : ''}`}>{children}</div>
+  </aside>;
+}
+
 const relations = [
   { id: 'identical', title: 'Identical', short: 'Carry over reality',
     definition: 'A real-world element maps directly to its fictional counterpart.',
@@ -12,26 +28,24 @@ const relations = [
 
 // Explanatory readings of the prepared example, not live model classifications.
 export function SimilarityContext() {
-  return <aside className="similarity-context" aria-label="Similarity relations explained">
-    <h3>How surroundings spark an idea</h3>
+  return <ResearchContext title="How surroundings spark an idea" label="Similarity relations explained">
     <dl className="similarity-relations">
       {relations.map(item => <div key={item.id}>
         <dt>{item.title}</dt>
         <dd><p>{item.definition}</p><p className="similarity-example">{item.example}</p></dd>
       </div>)}
     </dl>
-  </aside>;
+  </ResearchContext>;
 }
 
 export function AuthenticityContext() {
-  return <aside className="similarity-context" aria-label="Authenticity in transformation">
-    <h3>Keep fiction believable · The authenticity triad</h3>
+  return <ResearchContext title="Keep fiction believable · The authenticity triad" label="Authenticity in transformation">
     <dl className="similarity-relations">
       <div><dt>Factual Accuracy</dt><dd>Anchor real-world details in observation and accurate references, while leaving room for imagined events.</dd></div>
       <div><dt>Logical &amp; Behavioral Consistency</dt><dd>Keep events, actions and character motivations coherent as the shadow becomes a clue to change.</dd></div>
       <div><dt>Emotional &amp; Psychological Authenticity</dt><dd>Make the protagonist’s fear, curiosity and hesitation feel believable within the situation.</dd></div>
     </dl>
-  </aside>;
+  </ResearchContext>;
 }
 
 export function DesignGoals() {

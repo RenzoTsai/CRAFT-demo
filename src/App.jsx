@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useRef, useState } from "react";
+import { useEffect, useId, useReducer, useRef, useState } from "react";
 import {
   ArrowDown,
   ArrowRight,
@@ -14,6 +14,7 @@ import {
   Info,
   Monitor,
   Home,
+  ChevronDown,
 } from "lucide-react";
 import WearerView from "./WearerView.jsx";
 import RingMouse from "./RingMouse.jsx";
@@ -41,23 +42,34 @@ function download(name, text, type) {
   a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
+const experienceSteps = [
+  { title: 'Find inspiration', detail: 'AI proactively suggests connections between your surroundings and your story.' },
+  { title: 'Capture a moment', detail: 'Take a photo and voice your idea, right where it happens.' },
+  { title: 'Turn reality into fiction', detail: 'Shape everyday details into scenes, characters, and plots.' },
+  { title: 'Step into a character', detail: 'Explore dialogue through role-play with an AI character.' },
+  { title: 'Develop the full draft', detail: 'Organize plot points, generate a draft, and revise it on desktop.' },
+];
 function ExperienceJourney({ activeStep = null, compact = false }) {
+  const [expanded, setExpanded] = useState(false);
+  const listId = useId();
+  const current = experienceSteps[activeStep ?? 0];
+  useEffect(() => setExpanded(false), [activeStep]);
   return (
-        <section className={compact ? "intro-journey journey-progress" : "intro-journey wrap"} aria-label="The CRAFT experience">
-            <h2 className="section-heading">The CRAFT experience</h2>
-            <ol aria-label="From everyday inspiration to fiction writing">
-              {[
-                { title: 'Find inspiration', detail: 'AI proactively suggests connections between your surroundings and your story.' },
-                { title: 'Capture a moment', detail: 'Take a photo and voice your idea, right where it happens.' },
-                { title: 'Turn reality into fiction', detail: 'Shape everyday details into scenes, characters, and plots.' },
-                { title: 'Step into a character', detail: 'Explore dialogue through role-play with an AI character.' },
-                { title: 'Develop the full draft', detail: 'Organize plot points, generate a draft, and revise it on desktop.' },
-              ].map((step, index) => <li key={step.title} className={activeStep === index ? 'is-current' : undefined} aria-current={activeStep === index ? 'step' : undefined}>
-                <span className="journey-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-                <div><h3>{step.title}</h3>{!compact && <p>{step.detail}</p>}</div>
-              </li>)}
-            </ol>
-        </section>
+    <section className={compact ? "intro-journey journey-progress" : "intro-journey wrap"} aria-label="The CRAFT experience">
+      <h2 className="section-heading">The CRAFT experience</h2>
+      {compact && <button className="journey-toggle" aria-expanded={expanded} aria-controls={listId}
+        onClick={() => setExpanded(value => !value)}>
+        <span className="journey-current">{current.title}</span>
+        <span className="journey-count">{String((activeStep ?? 0) + 1).padStart(2, '0')} / 05</span>
+        <ChevronDown size={15} aria-hidden="true" />
+      </button>}
+      <ol id={listId} className={expanded ? 'is-open' : undefined} aria-label="From everyday inspiration to fiction writing">
+        {experienceSteps.map((step, index) => <li key={step.title} className={activeStep === index ? 'is-current' : undefined} aria-current={activeStep === index ? 'step' : undefined}>
+          <span className="journey-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <div><h3>{step.title}</h3>{!compact && <p>{step.detail}</p>}</div>
+        </li>)}
+      </ol>
+    </section>
   );
 }
 
@@ -341,8 +353,6 @@ export default function App() {
               </button>}
               </div>
             </div>
-            {state.phase === 'none' && !state.hasScene && <SimilarityContext />}
-            {['showing-image', 'question'].includes(state.phase) && <AuthenticityContext />}
             <div className={desktop ? "desktop-scene" : "glasses-scene"}>
               {desktop && <div className="desktop-scene-heading"><Monitor size={18} /><div><strong>Later, back home</strong><p>Alex revisits the captured moments and develops the story on a computer.</p></div></div>}
               <div className={desktop ? "desktop-monitor" : undefined}>
@@ -392,6 +402,8 @@ export default function App() {
                 For a larger view, turn your phone sideways.
               </span>
             </div>
+            {state.phase === 'none' && !state.hasScene && <SimilarityContext />}
+            {['showing-image', 'question'].includes(state.phase) && <AuthenticityContext />}
           </div>
           {message && (state.phase !== "editing" || editorDemo.saved) && (
             <p className="status-message" role="status">

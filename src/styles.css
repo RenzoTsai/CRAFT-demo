@@ -834,3 +834,52 @@ summary:focus-visible {
   .next-move .journey-progress ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .similarity-context { padding: 16px 17px; }
 }
+
+/* Keep the scene ahead of optional reading on small screens. */
+.demo-frame { display: flex; flex-direction: column; }
+.demo-frame > .next-move { order: 0; }
+.demo-frame > .similarity-context { order: 1; }
+.demo-frame > .glasses-scene, .demo-frame > .desktop-scene { order: 2; }
+.demo-frame > .viewer-footer { order: 3; }
+.journey-toggle, .context-toggle { display: none; }
+
+@media (max-width: 600px) {
+  .experience { padding-top: 8px; }
+  .experience-toolbar { min-height: 44px; padding-bottom: 6px; }
+  .experience-toolbar button { min-height: 44px; font-size: 11px; }
+  .demo-frame { border-radius: 10px; }
+  .next-move { padding: 10px 16px 16px; }
+  .next-move .journey-progress { margin-bottom: 10px; }
+  .journey-toggle { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 44px; padding: 0; text-align: left; }
+  .journey-current { flex: 1; color: #96712b; font-size: 13px; font-weight: 700; }
+  .journey-count { color: var(--muted); font-size: 11px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .journey-toggle > svg, .context-toggle > svg { color: var(--muted); }
+  .journey-toggle[aria-expanded="true"] > svg, .context-toggle[aria-expanded="true"] > svg { transform: rotate(180deg); }
+  .next-move .journey-progress ol { display: none; }
+  .next-move .journey-progress ol.is-open { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 4px 0 14px; }
+  .next-move .journey-progress h3 { font-size: 12px; }
+  .next-move h2 { font-size: 17px; line-height: 1.35; }
+  .next-move p { margin-top: 6px; font-size: 12px; line-height: 1.5; }
+  .next-controls { margin-top: 14px; gap: 18px; }
+  .next-controls .primary-button { min-height: 48px; padding: 12px; font-size: 13px; }
+  .ring-mouse { gap: 4px; }
+  .ring-label { font-size: 7px; letter-spacing: 1px; }
+  .ring-face { width: 88px; height: 88px; }
+  .ring-key { width: 28px; height: 28px; }
+  .ring-key svg { width: 16px; height: 16px; }
+  .ring-top, .ring-bottom { left: 28px; }
+  .ring-left, .ring-right { top: 28px; }
+  .ring-trackpad { width: 18px; height: 18px; border-radius: 4px; }
+  .demo-frame > .similarity-context { order: 4; padding: 0 16px; }
+  .similarity-context > h3 { display: none; }
+  .context-toggle { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; min-height: 48px; padding: 12px 0; text-align: left; font-size: 12px; line-height: 1.5; font-weight: 500; color: var(--muted); }
+  .context-content { display: none; }
+  .context-content.is-open { display: block; padding: 4px 0 18px; }
+  .similarity-relations { gap: 18px; }
+  .similarity-relations dt { font-size: 13px; }
+  .similarity-relations dd { font-size: 12px; line-height: 1.55; }
+  .viewer-footer { gap: 4px 12px; padding: 6px 12px; }
+  .viewer-footer button { min-height: 36px; font-size: 10px; }
+  .viewer-footer p { flex: 1; text-align: right; max-width: 160px; }
+  .phone-note { font-size: 10px; }
+}
